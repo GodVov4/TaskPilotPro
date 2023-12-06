@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "taskpilotpro"
+version = "0.1.0"
+description = ""
+authors = ["GodVov4 <volume245@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.2"
+django = "5.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
