@@ -23,7 +23,7 @@
 <body style="background-color:#C3ACD0;">
 <nav class="navbar navbar-expand-lg" style="background-color:#7743DB;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'main' %}" style="color:#FFFBF5;">
+        <a class="navbar-brand" href="{% url 'losses' %}" style="color:#FFFBF5;">
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-check2-square"
                  viewBox="0 0 16 16">
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -44,9 +44,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'losses' %}" style="color:#FFFBF5;">
-                        Losses
+                    <a class="nav-link active" aria-current="page" href="{% url 'main' %}" style="color:#FFFBF5;">ToDo
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'losses_sync' %}" style="color:#FFFBF5;">Sync</a>
                 </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0 ml-auto">

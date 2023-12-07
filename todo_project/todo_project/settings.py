@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'todo_app.apps.TodoAppConfig'
+    'todo_app.apps.TodoAppConfig',
+    'infoboard.apps.InfoboardConfig',
 ]
 
 MIDDLEWARE = [
