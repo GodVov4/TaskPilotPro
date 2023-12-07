@@ -1,4 +1,5 @@
 {% extends "todo_app/base.html" %}
+{% load humanize %}
 {% block content %}
 <div>
     <h2>ToDo List</h2>
@@ -16,7 +17,7 @@
         <div class="d-flex align-items-center">
             <div class="ms-3">
                 <p class="fw-bold mb-1">{{ todo.title }}</p>
-                <small>{{todo.published}}</small>
+                <small>{{ todo.published | naturaltime}}</small>
                 <p class="text-muted mb-0">{{ todo.description }}</p>
             </div>
         </div>
