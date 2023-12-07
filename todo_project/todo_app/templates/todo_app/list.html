@@ -1,0 +1,49 @@
+{% extends "todo_app/base.html" %}
+{% block content %}
+<div>
+    <h2>ToDo List</h2>
+    <a href="{% url 'create-todo' %}" class="btn d-flex align-items-center justify-content-center"
+       style="width:80px;height:80px;background-color:#7743DB;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#FFFBF5" class="bi bi-plus"
+             viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+        </svg>
+    </a>
+</div>
+<div class="list-group list-group-light my-3">
+    {% for todo in todo_list %}
+    <a href="{% url 'edit-todo' todo.id %}" class="list-group-item d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <div class="ms-3">
+                <p class="fw-bold mb-1">{{ todo.title }}</p>
+                <small>{{todo.published}}</small>
+                <p class="text-muted mb-0">{{ todo.description }}</p>
+            </div>
+        </div>
+        {% if todo.completed %}
+        <span class="badge rounded-pill badge-success bg-success">Completed</span>
+        {% else %}
+        <span class="badge rounded-pill badge-success" style="background-color:#C3ACD0;">ToDo</span>
+        {% endif %}
+    </a>
+    {% endfor %}
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link{% if not page_obj.has_previous %} disabled"
+               {% else %}" href="?page={{ page_obj.previous_page_number }}"{% endif %} style="color:#7743DB;">Previous</a>
+        </li>
+        {% for page in page_obj.paginator %}
+        <li class="page-item">
+            <a class="page-link" {% if page.number != page_obj.number %}href="?page={{ page.number }}"{% endif %}
+               style="{% if page.number == page_obj.number %}background-color:#7743DB;color:#FFFBF5{% else %}color:#7743DB{% endif %}">{{ page.number }}</a>
+        </li>
+        {% endfor %}
+        <li class="page-item">
+            <a class="page-link{% if not page_obj.has_next %} disabled"
+               {% else %}" href="?page={{ page_obj.next_page_number }}"{% endif %} style="color:#7743DB;">Next</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}

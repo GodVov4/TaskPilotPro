@@ -1,0 +1,30 @@
+{% extends "todo_app/base.html" %}
+
+{% block content %}
+<h2>Delete ToDo</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <p> Are you sure you want to delete {{object.title}}?</p>
+    <button type="submit" class="btn"
+            style="
+            color:#FFFBF5;
+            --bs-btn-bg:#7743DB;
+            --bs-btn-border-color:#7743DB;
+            --bs-btn-hover-bg:#6b3cc2;
+            --bs-btn-hover-border-color:#6b3cc2;
+            --bs-btn-active-bg:#5d34a8;
+            --bs-btn-active-border-color:#5d34a8;">
+        Yes</button>
+    <a href="{% url 'main' %}" class="btn"
+       style="
+       color:#FFFBF5;
+       --bs-btn-bg:#C3ACD0;
+       --bs-btn-border-color:#C3ACD0;
+       --bs-btn-hover-bg:#ad98b8;
+       --bs-btn-hover-border-color:#ad98b8;
+       --bs-btn-active-bg:#95839e;
+       --bs-btn-active-border-color:#95839e;">
+        No</a>
+</form>
+{% endblock %}
