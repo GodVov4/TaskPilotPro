@@ -8,11 +8,11 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "3.11.2"
 django = "5.0"
-celery = "^5.3.6"
-redis = "^5.0.1"
-beautifulsoup4 = "^4.12.2"
-requests = "^2.31.0"
-mongoengine = "^0.27.0"
+celery = "5.3.6"
+redis = "5.0.1"
+beautifulsoup4 = "4.12.2"
+requests = "2.31.0"
+pymongo = "4.6.1"
 
 
 [build-system]

@@ -37,7 +37,7 @@ def main(request):
         for el in results
     ]
 
-    return render(request, 'infoboard/losses-list.html', {"results": transformed_results, "page": results_page})
+    return render(request, 'infoboard/losses_list.html', {"results": transformed_results, "page": results_page})
 
 
 def sync_losses_list(request):
